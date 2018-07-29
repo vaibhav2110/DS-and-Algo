@@ -1,0 +1,225 @@
+!SESSION 2018-06-24 22:24:57.607 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_92
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-06-24 22:26:28.229
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Connect to dev.eclipse.org:443 [dev.eclipse.org/198.41.30.200] failed: Read timed out. ; version: 2.0.7.v20170906-1327
+!STACK 0
+org.apache.http.conn.ConnectTimeoutException: Connect to dev.eclipse.org:443 [dev.eclipse.org/198.41.30.200] failed: Read timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:150)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:170)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:64)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.security.ssl.InputRecord.readFully(Unknown Source)
+	at sun.security.ssl.InputRecord.read(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	... 17 more
+
+!ENTRY org.eclipse.jdt.core 4 4 2018-06-24 22:28:55.303
+!MESSAGE Error occurred while deleting: /HashTable/bin/com
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:773)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:116)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:47)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:256)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:175)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Contains: Could not delete '/HashTable/bin/com'.
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:366)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1781)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:760)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:116)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:47)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:256)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:175)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\Users\Vaibhav Prakash\Downloads\Compressed\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\12 Source Code  Slides\121 sourcecode\GenericHashMapLinearProbing\HashTable\bin\com\balazsholczer.
+java.nio.file.DirectoryNotEmptyException: C:\Users\Vaibhav Prakash\Downloads\Compressed\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\12 Source Code  Slides\121 sourcecode\GenericHashMapLinearProbing\HashTable\bin\com\balazsholczer
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:253)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:248)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:137)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:63)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:151)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:111)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:363)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1781)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:760)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:116)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:47)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:256)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:175)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Contains: Could not delete: C:\Users\Vaibhav Prakash\Downloads\Compressed\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\12 Source Code  Slides\121 sourcecode\GenericHashMapLinearProbing\HashTable\bin\com.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2018-06-24 22:28:55.305
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2018-06-24 22:28:55.305
+!MESSAGE Could not delete '/HashTable/bin/com'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:366)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1781)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:760)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:116)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:47)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:256)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:175)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\Users\Vaibhav Prakash\Downloads\Compressed\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\12 Source Code  Slides\121 sourcecode\GenericHashMapLinearProbing\HashTable\bin\com\balazsholczer.
+java.nio.file.DirectoryNotEmptyException: C:\Users\Vaibhav Prakash\Downloads\Compressed\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\12 Source Code  Slides\121 sourcecode\GenericHashMapLinearProbing\HashTable\bin\com\balazsholczer
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:253)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:248)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:137)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:63)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:151)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:111)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:363)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1781)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:760)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:116)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:47)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:256)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:175)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Contains: Could not delete: C:\Users\Vaibhav Prakash\Downloads\Compressed\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\12 Source Code  Slides\121 sourcecode\GenericHashMapLinearProbing\HashTable\bin\com.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2018-06-24 22:28:55.306
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2018-06-24 22:28:55.306
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2018-06-24 22:28:55.306
+!MESSAGE Could not delete: C:\Users\Vaibhav Prakash\Downloads\Compressed\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\12 Source Code  Slides\121 sourcecode\GenericHashMapLinearProbing\HashTable\bin\com\balazsholczer.
+!STACK 0
+java.nio.file.DirectoryNotEmptyException: C:\Users\Vaibhav Prakash\Downloads\Compressed\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\12 Source Code  Slides\121 sourcecode\GenericHashMapLinearProbing\HashTable\bin\com\balazsholczer
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:253)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:248)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:137)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:63)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:151)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:111)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:363)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1781)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:760)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:116)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:47)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:256)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:175)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2018-06-24 22:28:55.306
+!MESSAGE Could not delete: C:\Users\Vaibhav Prakash\Downloads\Compressed\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\[FreeTutorials.Us] Udemy - algorithms-and-data-structures\12 Source Code  Slides\121 sourcecode\GenericHashMapLinearProbing\HashTable\bin\com.
